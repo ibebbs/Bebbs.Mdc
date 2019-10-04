@@ -30,4 +30,9 @@ steps:
     command: push
     nuGetFeedType: external
     publishFeedCredentials: 'MyGet Bebbs Feed'
+    verbosityPush: detailed
+    versioningScheme: byPrereleaseNumber
+    majorVersion: '1'
+    minorVersion: '0'
+    patchVersion: '0'
 
