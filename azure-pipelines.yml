@@ -13,7 +13,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  version: 1.0.0
+  version: 1.0.1
 
 steps:
 - task: UseDotNet@2
@@ -24,7 +24,8 @@ steps:
     installationPath: $(Agent.ToolsDirectory)/dotnet
 - script: dotnet restore
 - script: dotnet build
-- script: dotnet pack /p:PackageVersion=$(version)
+# should now be done by build due to project setting 
+# - script: dotnet pack /p:PackageVersion=$(version)
 - task: NuGetCommand@2
   inputs:
     command: push

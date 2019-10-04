@@ -1,7 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <Description>A library for simplifying interaction with the Multiple Display Control (MDC) Protocol</Description>
+    <PackageProjectUrl>https://github.com/ibebbs/Bebbs.Mdc</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ibebbs/Bebbs.Mdc</RepositoryUrl>
+    <PackageTags>Samsung Mdc</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
