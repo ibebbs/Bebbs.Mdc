@@ -13,6 +13,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  version: 1.0.0
 
 steps:
 - task: UseDotNet@2
@@ -23,3 +24,12 @@ steps:
     installationPath: $(Agent.ToolsDirectory)/dotnet
 - script: dotnet restore
 - script: dotnet build
+- script: dotnet pack /p:PackageVersion=$(version)
+- task: NuGetCommand@2
+  inputs:
+    command: push
+    nuGetFeedType: external
+    publishFeedCredentials: 'MyGet Bebbs Feed'
+    versioningScheme: byEnvVar
+    versionEnvVar: version
+
